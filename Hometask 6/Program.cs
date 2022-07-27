@@ -3,12 +3,13 @@
 // 1. Create two functions with one-dimensional array ✅
 // 2. Create two functions with multi-dimensional array ✅
 // 3. Create two functions for modifying string ✅
-// 4. Create two functions using StringBuilder
+// 4. Create two functions using StringBuilder ✅
 // 5. Create a program using SPLIT / JOIN methods ✅
 
 
 using System;
 using System.Text;
+using System.Text.RegularExpressions;
 
 public class App
 {
@@ -33,7 +34,14 @@ public class App
             Console.WriteLine(i);
         }
 
-        Console.WriteLine("The sum of a two-dimensional array: " + ArraysAndStrings.GetSumOfMultidimensionalArray(arr));
+        Console.WriteLine("The sum of a two-dimensional array: " + ArraysAndStrings.GetSumOfMultidimensionalArray(arr) + "\n");
+        
+        string mystring = null;
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Enter your input: ");
+        Console.ForegroundColor = ConsoleColor.White;
+        mystring = Console.ReadLine();
+        ArraysAndStrings.CheckEmail(mystring);
         
     }
 }
@@ -96,5 +104,22 @@ class ArraysAndStrings
         sb.Insert(11, "!!!!!!!");
         sb.Remove(12, 7);
         Console.WriteLine(sb);
+    }
+    
+    public static bool CheckEmail (string email) 
+    {
+        StringBuilder sb = new StringBuilder("Your email (" + email + ") is ");
+        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        Match match = regex.Match(email);
+        if (match.Success) {
+            sb.Append("correct!");
+            Console.WriteLine(sb);
+            return true;
+        } else {
+            sb.Append("incorrect!");
+            sb.AppendLine("Try once again...");
+            Console.WriteLine(sb);
+            return false;
+        }
     }
 }
