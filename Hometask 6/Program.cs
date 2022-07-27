@@ -14,15 +14,17 @@ public class App
 {
     public static void Main(string[] args)
     {
+        string testString = "The planet Earth is the best";
+        
         ArraysAndStrings.Init();
         
-        Console.WriteLine(ArraysAndStrings.RevertString("THE PLANET EARTH"));
+        Console.WriteLine(ArraysAndStrings.RevertString(testString));
 
 
-        Console.WriteLine(ArraysAndStrings.GetTheThirdWord("THE PLANET EARTH"));
+        Console.WriteLine(ArraysAndStrings.GetTheThirdWord(testString));
 
 
-        Console.WriteLine(ArraysAndStrings.ChangeTwoWords("THE PLANET EARTH IS THE BEST", 2));
+        Console.WriteLine(ArraysAndStrings.ChangeTwoWords(testString, 2));
 
 
         int[,] arr = ArraysAndStrings.ConcatenateTwoIntArrays(new int[3] { 5, 3, 2 }, new int[3] { 4, 5, 6 });
