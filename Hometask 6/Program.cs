@@ -1,4 +1,4 @@
-﻿// # Hometask #6
+// # Hometask #6
 
 // 1. Create two functions with one-dimensional array ✅
 // 2. Create two functions with multi-dimensional array ✅
@@ -8,11 +8,14 @@
 
 
 using System;
+using System.Text;
 
 public class App
 {
     public static void Main(string[] args)
     {
+        ArraysAndStrings.Init();
+        
         Console.WriteLine(ArraysAndStrings.RevertString("THE PLANET EARTH"));
 
 
@@ -80,5 +83,16 @@ class ArraysAndStrings
         }
 
         return sum;
+    }
+    
+    public static void Init() 
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append("Hello ");
+        sb.AppendLine("World!");
+        sb.AppendLine("Hello C#");
+        sb.Insert(11, "!!!!!!!");
+        sb.Remove(12, 7);
+        Console.WriteLine(sb);
     }
 }
