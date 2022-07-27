@@ -21,23 +21,24 @@ public class App
         
         Console.WriteLine(ArraysAndStrings.RevertString(testString));
 
-
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine(ArraysAndStrings.GetTheThirdWord(testString));
-
+        Console.ForegroundColor = ConsoleColor.White;
 
         Console.WriteLine(ArraysAndStrings.ChangeTwoWords(testString, 2));
 
-
+        Console.ForegroundColor = ConsoleColor.Magenta;
         int[,] arr = ArraysAndStrings.ConcatenateTwoIntArrays(new int[3] { 5, 3, 2 }, new int[3] { 4, 5, 6 });
         foreach (int i in arr)
         {
             Console.WriteLine(i);
         }
+        Console.ForegroundColor = ConsoleColor.White;
 
         Console.WriteLine("The sum of a two-dimensional array: " + ArraysAndStrings.GetSumOfMultidimensionalArray(arr) + "\n");
         
         string mystring = null;
-        Console.ForegroundColor = ConsoleColor.Green;
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Enter your input: ");
         Console.ForegroundColor = ConsoleColor.White;
         mystring = Console.ReadLine();
@@ -116,7 +117,7 @@ class ArraysAndStrings
             Console.WriteLine(sb);
             return true;
         } else {
-            sb.Append("incorrect!");
+            sb.Append("incorrect!\n");
             sb.AppendLine("Try once again...");
             Console.WriteLine(sb);
             return false;
